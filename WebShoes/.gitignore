@@ -1,3 +1,8 @@
+# Dependencies
+/tsconfig.json
+/tsconfig.node.json
+/vite.config.ts
+
 # Logs
 logs
 *.log
@@ -11,9 +16,7 @@ node_modules
 dist
 dist-ssr
 *.local
-/tsconfig.json
-/tsconfig.node.json
-/vite.config.ts
+
 
 # Editor directories and files
 .vscode/*
