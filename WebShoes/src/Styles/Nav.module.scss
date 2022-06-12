@@ -1,0 +1,16 @@
+.nav{
+    background-color: var(--navTextColor);
+    
+    display: flex;
+    flex-direction: column;
+    
+    h3{
+
+        font-weight: 800;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: var(--tileColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

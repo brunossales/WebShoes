@@ -1,0 +1,17 @@
+:root{
+    --background-color: #f6eee0;
+    --fontTextColor: #f04842 ;
+    --navTextColor: #f0b180;
+    --tileColor: #351f15;
+    --paragraphStyle: #3f312b;
+}
+
+*{
+    padding: 0;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+html {
+    background: var(--background-color);
+}
