@@ -1,7 +1,7 @@
 # Dependencies
-/tsconfig.json
-/tsconfig.node.json
-/vite.config.ts
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
 
 # Logs
 logs
