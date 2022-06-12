@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
 dist
 dist-ssr
 *.local
