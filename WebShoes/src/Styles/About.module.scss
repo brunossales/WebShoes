@@ -1,0 +1,35 @@
+.about{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: var(--background-color);
+
+    section{
+        
+        width: 100vw;
+        height: 60vh;
+        line-height: 4rem;
+        padding: 10px;
+        background-color: var(--backgroundColorTenis);
+        margin-top: 5%;
+        color: var(--fontTextColorAbout);
+    }
+    h1{
+        font-family: serif;
+        font-size: 2.5rem;
+        
+        span{
+            font-family: serif;
+            color: var(--tileColor);
+            font-weight: 600;
+        }
+    }
+
+}
+
+.links{
+    a{
+        padding: 0 1% ;
+    }
+}

@@ -2,15 +2,25 @@
     background-color: var(--navTextColor);
     
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     
     h3{
-
+        padding-left: 10%;
+        font-size: 1.5rem;
         font-weight: 800;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         color: var(--tileColor);
         display: flex;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
+    }
+
+    a{
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding-left: 3%;
+        color: var(--linkColor);
+        text-decoration: none;
     }
 }

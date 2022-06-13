@@ -4,14 +4,24 @@
     --navTextColor: #f0b180;
     --tileColor: #351f15;
     --paragraphStyle: #3f312b;
+    --linkColor: #363433;
+    --backgroundColorTenis: #f7f7f7;
+    --fontTextColorAbout: #994200;
 }
 
 *{
     padding: 0;
-    width: 100%;
     font-family: sans-serif;
 }
 
 html {
     background: var(--background-color);
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: right;
+    width: 100%;
 }
