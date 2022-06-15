@@ -1,60 +1,48 @@
+import { useEffect, useState } from "react";
+
 import styles from "../Styles/Tenis.module.scss";
-
 import "../App.scss";
-import { Tenis } from "./Shoes";
 
-export function Loja() {
-  const shoesDescription = [
-    {
-      title: "Tênis numero 1",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
+import { Shoes } from "./Shoes";
+
+import FirebaseShopServices from '../Services/FirebaseShopServices.js'
+import FirebaseContext from "../Utils/FirebaseContext.js"
+
+type shoe = {
+  title: string,
+  desc: string,
+  img: string
+}
+
+
+export const ShopContext = () =>
+  <FirebaseContext.Consumer>
+      {(firebase) => <Shop firebase={firebase}/>}
+  </FirebaseContext.Consumer>
+
+ function Shop(props) {
+
+  const [shoesHendered, setShoesHendered] = useState([])
+
+
+  useEffect(
+    () => {
+      FirebaseShopServices.list(
+        props.firebase.getFirestoreDb(),
+        (shoes) => setShoesHendered(shoes)
+      )
     },
-    {
-      title: "Tênis numero 2",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 3",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 4",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 4",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 4",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 4",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-    {
-      title: "Tênis numero 4",
-      desc: "Tenis criado por Bruno usando o link da api do unsplash",
-      img: "https://source.unsplash.com/250x250/?shoes",
-    },
-  ];
+    [shoesHendered]
+  )
 
   return (
     <div className={styles.section}>
-      {shoesDescription.map((shoesDescription) => (
-        <div className={styles.container}>
-          <Tenis
-            title={shoesDescription.title}
-            desc={shoesDescription.desc}
-            img={shoesDescription.img}
+      {shoesHendered.map((shoesHendered : shoe, key) => (
+        <div className={styles.container} key={key}>
+          <Shoes
+            title={shoesHendered.title}
+            desc={shoesHendered.desc}
+            img={shoesHendered.img}
           />
           <button>Editar</button>
         </div>
@@ -64,3 +52,4 @@ export function Loja() {
     </div>
   );
 }
+

@@ -11,14 +11,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 2%;
-    padding-bottom: 2%;
-    border-radius: 5px;
+    margin: 10px;
+    padding-bottom: 4%;
+    border-radius: 7px;
     color: var(--paragraphStyle);
     font-weight: bold;
     background: var(--backgroundColorTenis);
-    // width: 20%;
-    // height: 20%;
+
 
     h3 {
         padding-bottom: 5px;
@@ -29,7 +28,8 @@
     }
 
     p {
-        width: 70%;
+        // diminued the % of the width
+        width: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -41,10 +41,10 @@
         width: 6rem;
         height: 2rem;
         border-radius: 5px;
-        border: 1px solid var(--tileColor);
         cursor: pointer;
-        background-color: var(--background-color);
+        background-color: var(--buttonEditColor);
         transition: 500ms;
+        border: none;
     }
 
     button:hover{
@@ -61,8 +61,8 @@
     margin-bottom: 5%;
     margin-left: 3%;
     padding: 0 2px;
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
     // border: none;
     border: solid 2px;
     border-radius: 2rem;
@@ -81,5 +81,5 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
-
+    width: 92%;
 }

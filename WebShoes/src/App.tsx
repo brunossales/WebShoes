@@ -4,8 +4,7 @@ import styles from "./Styles/Tenis.module.scss";
 import styleNav from "./Styles/Nav.module.scss";
 
 import "./App.scss";
-import { Tenis } from "./Components/Shoes";
-import { Loja } from "./Components/Shop";
+import { ShopContext } from "./Components/Shop";
 import { About } from "./Components/About";
 import { Home } from "./Components/Home";
 
@@ -19,7 +18,7 @@ function App() {
         <a href="">Loja</a>
       </nav>
       <div className={styles.box}>
-        {/* <Loja /> */}
+        <ShopContext />
       </div>
       <div>
         {/* <About /> */}
