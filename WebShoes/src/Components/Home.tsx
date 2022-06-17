@@ -1,4 +1,6 @@
 import React from "react";
+
+// npm install better-react-carousel
 import Carousel from "better-react-carousel";
 
 import styleHome from "../Styles/Home.module.scss";
