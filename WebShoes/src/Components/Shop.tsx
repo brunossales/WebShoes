@@ -5,51 +5,48 @@ import "../App.scss";
 
 import { Shoes } from "./Shoes";
 
-import FirebaseShopServices from '../Services/FirebaseShopServices.js'
-import FirebaseContext from "../Utils/FirebaseContext.js"
+import FirebaseShopServices from "../Services/FirebaseShopServices.js";
+import FirebaseContext from "../Utils/FirebaseContext.js";
 
 type shoe = {
-  title: string,
-  desc: string,
-  img: string
-}
+  title: string;
+  desc: string;
+  img: string;
+};
 
-
-export const ShopContext = () =>
+export const ShopContext = () => (
   <FirebaseContext.Consumer>
-      {(firebase) => <Shop firebase={firebase}/>}
+    {(firebase) => <Shop firebase={firebase} />}
   </FirebaseContext.Consumer>
+);
 
- function Shop(props) {
+function Shop(props) {
+  const [shoesHendered, setShoesHendered] = useState([]);
 
-  const [shoesHendered, setShoesHendered] = useState([])
-
-
-  useEffect(
-    () => {
-      FirebaseShopServices.list(
-        props.firebase.getFirestoreDb(),
-        (shoes) => setShoesHendered(shoes)
-      )
-    },
-    [shoesHendered]
-  )
+  useEffect(() => {
+    FirebaseShopServices.list(props.firebase.getFirestoreDb(), (shoes) =>
+      setShoesHendered(shoes)
+    );
+  }, [shoesHendered]);
 
   return (
-    <div className={styles.section}>
-      {shoesHendered.map((shoesHendered : shoe, key) => (
-        <div className={styles.container} key={key}>
-          <Shoes
-            title={shoesHendered.title}
-            desc={shoesHendered.desc}
-            img={shoesHendered.img}
-          />
-          <button>Editar</button>
-        </div>
-      ))}
+    <div className={styles.box}>
+      <div className={styles.section}>
+        {shoesHendered.map((shoesHendered: shoe, key) => (
+          <div className={styles.container} key={key}>
+            <Shoes
+              title={shoesHendered.title}
+              desc={shoesHendered.desc}
+              img={shoesHendered.img}
+            />
+            <button>Editar</button>
+          </div>
+        ))}
 
-      <button className={styles.button}>+</button>
+        <button className={ styles.button }>
+          +
+        </button>
+      </div>
     </div>
   );
 }
-

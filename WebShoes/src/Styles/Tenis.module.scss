@@ -36,7 +36,7 @@
         font-size: 0.7rem;
     }
 
-    button{
+    button {
         font-family: Arial, Helvetica, sans-serif;
         width: 6rem;
         height: 2rem;
@@ -47,7 +47,7 @@
         border: none;
     }
 
-    button:hover{
+    button:hover {
         background-color: var(--navTextColor);
     }
 }
@@ -68,16 +68,18 @@
     border-radius: 2rem;
     border-color: var(--navTextColor);
 
-    transition: 600ms;
+    transition: all 700ms;
 }
 
 .button:hover {
     cursor: pointer;
     // border: none;
-    
+
     background-color: var(--navTextColor);
 }
-.section{
+
+
+.section {
     display: flex;
     flex-wrap: wrap;
     justify-content: right;

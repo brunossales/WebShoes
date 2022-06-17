@@ -19,22 +19,22 @@ export const Home = () => {
           autoplay={2000}
         >
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=1" />
+            <img src="https://source.unsplash.com/700x450/?shoes=1" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=2" />
+            <img src="https://source.unsplash.com/700x450/?shoes=2" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=3" />
+            <img src="https://source.unsplash.com/700x450/?shoes=3" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=4" />
+            <img src="https://source.unsplash.com/700x450/?shoes=4" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=5" />
+            <img src="https://source.unsplash.com/700x450/?shoes=5" />
           </Carousel.Item>
           <Carousel.Item>
-            <img src="https://source.unsplash.com/700x400/?shoes=6" />
+            <img src="https://source.unsplash.com/700x450/?shoes=6" />
           </Carousel.Item>
         </Carousel>
       </>
