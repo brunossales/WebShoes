@@ -27,7 +27,7 @@ function Shop(props) {
     FirebaseShopServices.list(props.firebase.getFirestoreDb(), (shoes) =>
       setShoesHendered(shoes)
     );
-  }, [shoesHendered, []]);
+  }, [shoesHendered]);
 
   return (
     <div className={styles.box}>
