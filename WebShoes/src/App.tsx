@@ -7,6 +7,7 @@ import { ShopContext } from "./Components/Shop";
 import { About } from "./Components/About";
 import { Home } from "./Components/Home";
 import { Link, Route, Routes } from "react-router-dom";
+import { CreateShoe } from "./Components/CRUD/CreateShoe";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={ <Home /> } />
         <Route path="about" element={ <About /> } />
         <Route path="shop" element={ <ShopContext /> } />
+        <Route path="createShoe" element={ <CreateShoe /> } />
       </Routes>
     </div>
   );

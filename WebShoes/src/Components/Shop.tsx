@@ -7,6 +7,8 @@ import { Shoes } from "./Shoes";
 
 import FirebaseShopServices from "../Services/FirebaseShopServices.js";
 import FirebaseContext from "../Utils/FirebaseContext.js";
+import { CreateShoe } from "./CRUD/CreateShoe";
+import { Navigate, useNavigate } from "react-router-dom";
 
 type shoe = {
   title: string;
@@ -22,6 +24,7 @@ export const ShopContext = () =>
 
 function Shop(props) {
   const [shoesHendered, setShoesHendered] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     FirebaseShopServices.list(props.firebase.getFirestoreDb(), (shoes) =>
@@ -43,7 +46,7 @@ function Shop(props) {
           </div>
         ))}
         
-        <button className={ styles.button }>
+        <button className={ styles.button } onClick={ () => navigate('/createShoe')}>
           +
         </button>
       </div>
