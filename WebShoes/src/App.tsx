@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import styles from "./Styles/Tenis.module.scss";
 import styleNav from "./Styles/Nav.module.scss";
 
 import "./App.scss";

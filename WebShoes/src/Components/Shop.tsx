@@ -14,11 +14,11 @@ type shoe = {
   img: string;
 };
 
-export const ShopContext = () => (
+export const ShopContext = () => 
   <FirebaseContext.Consumer>
     {(firebase) => <Shop firebase={firebase} />}
   </FirebaseContext.Consumer>
-);
+
 
 function Shop(props) {
   const [shoesHendered, setShoesHendered] = useState([]);
@@ -27,7 +27,7 @@ function Shop(props) {
     FirebaseShopServices.list(props.firebase.getFirestoreDb(), (shoes) =>
       setShoesHendered(shoes)
     );
-  }, [shoesHendered]);
+  }, [shoesHendered, []]);
 
   return (
     <div className={styles.box}>
@@ -42,7 +42,7 @@ function Shop(props) {
             <button>Editar</button>
           </div>
         ))}
-
+        
         <button className={ styles.button }>
           +
         </button>
