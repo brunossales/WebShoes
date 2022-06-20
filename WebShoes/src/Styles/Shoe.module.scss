@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    padding-bottom: 1%;
+    border-radius: 7px;
+    color: var(--paragraphStyle);
+    font-weight: bold;
+    background: var(--backgroundColorTenis);
+    transition: all 800ms;
+
+}

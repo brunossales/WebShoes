@@ -4,6 +4,7 @@
     align-items: flex-end;
     justify-content: right;
     width: 100%;
+    
 }
 
 .container {
@@ -11,20 +12,29 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 10px;
-    padding-bottom: 4%;
+    margin: 15px;
+    padding-bottom: 2%;
     border-radius: 7px;
     color: var(--paragraphStyle);
     font-weight: bold;
     background: var(--backgroundColorTenis);
+    transition: all 800ms;
+    
+    box-shadow: 3px 3px 8px 4px var(--buttonEditColor);
 
 
     h3 {
-        padding-bottom: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1rem;
+    }
+
+    h4{
+        font-weight: 700;
+        display: flex;
+        margin: 1px 1px;
+
     }
 
     p {
@@ -36,10 +46,16 @@
         font-size: 0.7rem;
     }
 
-    button {
+    .buttons{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .buttonEdit {
         font-family: Arial, Helvetica, sans-serif;
         width: 6rem;
         height: 2rem;
+        // margin-right: 5px;
         border-radius: 5px;
         cursor: pointer;
         background-color: var(--buttonEditColor);
@@ -47,10 +63,28 @@
         border: none;
     }
 
-    button:hover {
+    .buttonDelete{
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: var(--backgroundColorTenis);
+        color: red;
+        transition: all 500ms;
+
+    }
+
+    .buttonDelete:hover{
+        border-radius: 8px;
+        box-shadow: 2px 2px 4px 1px red;
+    }
+
+
+    .buttonEdit:hover {
         background-color: var(--navTextColor);
     }
 }
+
+
 
 .button {
     color: var(--tileColor);
@@ -67,13 +101,19 @@
     border: solid 2px;
     border-radius: 2rem;
     border-color: var(--navTextColor);
+    transition: transform 700ms;
 
+    
+}
+
+.buttonNone{
+    visibility: hidden;
+    display: none;
     transition: all 700ms;
 }
 
 .button:hover {
     cursor: pointer;
-    // border: none;
 
     background-color: var(--navTextColor);
 }
@@ -84,4 +124,5 @@
     flex-wrap: wrap;
     justify-content: right;
     width: 92%;
+    
 }

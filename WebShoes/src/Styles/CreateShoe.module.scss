@@ -1,3 +1,4 @@
+
 .container{
     margin: 30px auto;
     padding-bottom: 30px;
@@ -87,6 +88,7 @@
     align-items: center;
     justify-content: center;
     
+    
     input{
         border-radius: 5px;
         background-color: var(--buttonColorCrud);
@@ -100,6 +102,7 @@
     input:hover{
         background-color: var(--buttonColorCrudHover);
         cursor: pointer;
+        box-shadow: 1px 2px 8px 2px var(--buttonColorCrudHover);
     }
 }
 
