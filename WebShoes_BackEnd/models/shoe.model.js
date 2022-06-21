@@ -11,6 +11,6 @@ var shoeSchema = mongoose.Schema(
 );
 
 //module for the schema
-var ShoeModel = mongoose.model('webshoes', shoeSchema)
+var ShoeModel = mongoose.model('shoes', shoeSchema)
 
 module.exports = ShoeModel

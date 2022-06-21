@@ -9,6 +9,15 @@ class ShoeService{
                 }
             );
     }
+
+    static create(req, res){
+        shoeModel.create(req.body)
+            .then(
+                (shoe) => {
+                    res.status()
+                }
+            )
+    }
 }
 
 module.exports = ShoeService

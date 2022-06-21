@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 
 
 //connection local
-var mongoDB_URI = 'mongodb://127.0.0.1:27017/webshoes'
+var mongoDB_URI = 'mongodb+srv://brunossaless:bruno9458@cluster0.tdouz.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoDB_URI, {useNewUrlParser:true})
 
 var db = mongoose.connection
