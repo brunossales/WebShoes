@@ -1,1 +1,2 @@
-db/
+# Ignore the build directory
+/db
