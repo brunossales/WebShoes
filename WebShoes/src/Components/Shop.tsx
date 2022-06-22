@@ -9,6 +9,7 @@ import axios from "axios";
 import { Shoes } from "./Shoes";
 
 import {AiOutlineDelete} from 'react-icons/ai'
+import { Toaster } from "react-hot-toast";
 
 // import FirebaseShopServices from "../Services/FirebaseShopServices.js";
 // import FirebaseContext from "../Utils/FirebaseContext.js";
@@ -30,7 +31,7 @@ function WindowButton(innerH) {
 
 function WindowScroll(scrolY) {
   if (WindowButton(document.documentElement.scrollHeight))
-    return scrolY > 50 ? true : false;
+    return scrolY > 60 ? true : false;
   return false;
 }
 
@@ -50,7 +51,7 @@ export function Shop() {
         setShoesHendered(res.data);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [shoesHendered]);
 
   return (
     <div className={styles.box}>
@@ -73,7 +74,7 @@ export function Shop() {
       
         <button
           className={
-            WindowScroll(window.scrollY) ? styles.buttonNone : styles.button
+            WindowScroll(window.scrollY) ? styles.button : styles.buttonNone 
           }
           onClick={() => navigate("/createShoe")}
         >
@@ -81,6 +82,7 @@ export function Shop() {
         </button>
 
       </div>
+      <Toaster  />
     </div>
   );
 }

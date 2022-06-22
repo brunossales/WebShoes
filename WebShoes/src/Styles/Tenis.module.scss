@@ -87,6 +87,7 @@
 
 
 .button {
+    visibility: visible;
     color: var(--tileColor);
     font-size: 2rem;
     position: fixed;
@@ -100,7 +101,7 @@
     // border: none;
     border: solid 2px;
     border-radius: 2rem;
-    border-color: var(--navTextColor);
+    border-color: var(--buttonFloating);
     transition: transform 700ms;
 
     
@@ -108,14 +109,19 @@
 
 .buttonNone{
     visibility: hidden;
+    pointer-events: none;
     display: none;
     transition: all 700ms;
+    background: none;
 }
 
 .button:hover {
+    transition: all 700ms;
     cursor: pointer;
 
-    background-color: var(--navTextColor);
+    border: none;
+    background-color: var(--buttonFloating);
+    box-shadow: 0px 0px 20px 0px var(--buttonFloatingShadow);
 }
 
 
