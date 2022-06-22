@@ -9,4 +9,11 @@ router.get(
     }
 );
 
+router.post(
+    '/create',
+    function (req, res, next) {
+        shoeService.create(req, res)
+    }
+)
+
 module.exports = router

@@ -14,9 +14,10 @@ class ShoeService{
         shoeModel.create(req.body)
             .then(
                 (shoe) => {
-                    res.status()
+                    res.status(201).json(shoe)
                 }
             )
+            .catch(err => console.log(err))
     }
 }
 
