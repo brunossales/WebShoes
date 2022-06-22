@@ -1,2 +1,2 @@
 # Ignore the build directory
-db
+db/mongo.conecction.js/*
