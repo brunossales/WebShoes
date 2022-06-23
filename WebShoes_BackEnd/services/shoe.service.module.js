@@ -19,6 +19,12 @@ class ShoeService{
             )
             .catch(err => console.log(err))
     }
+
+    static delete(req, res){
+        shoeModel.findByIdAndRemove(req.params.id)
+            .then((shoes) => res.status(201).json(shoes))
+            .catch(error => console.log(error))
+    }
 }
 
 module.exports = ShoeService

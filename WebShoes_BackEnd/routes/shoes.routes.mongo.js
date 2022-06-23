@@ -16,4 +16,11 @@ router.post(
     }
 )
 
+router.delete(
+    '/delete/:id',
+    function (req, res, next) {
+        shoeService.delete(req, res)
+    }
+)
+
 module.exports = router

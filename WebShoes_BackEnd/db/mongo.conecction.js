@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 
-
 //connection local
 var mongoDB_URI = 'mongodb+srv://brunossaless:bruno9458@cluster0.tdouz.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoDB_URI, {useNewUrlParser:true})

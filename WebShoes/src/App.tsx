@@ -14,8 +14,8 @@ function App() {
         <h3>
           <Link to="/">WebShoes</Link>
         </h3>
-        <Link to="/">Home</Link>
-        <Link to="about">About</Link>
+        <Link to="/">Início</Link>
+        <Link to="about">Sobre</Link>
         <Link to="shop">Loja</Link>
       </nav>
       <Routes>

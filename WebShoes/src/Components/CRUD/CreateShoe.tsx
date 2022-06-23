@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import styleCreate from '../../Styles/CreateShoe.module.scss'
 import { Toaster } from "react-hot-toast";
+import { linkLocalHost } from "../Url/Link";
 
 export function CreateShoe(){
     const [title, setTitle] = useState("")
@@ -27,7 +28,7 @@ export function CreateShoe(){
         const newShoe = {title, desc, price, img}
 
         toast.promise(
-            axios.post("http://localhost:3001/shop/create", newShoe),
+            axios.post(linkLocalHost+"create", newShoe),
              {
                loading: 'Salvando...',
                success: <b>Tênis Adicionado!</b>,
