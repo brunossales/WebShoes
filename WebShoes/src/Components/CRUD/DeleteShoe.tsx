@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { linkLocalHost } from "../Url/Link";
 
-export function deleteShoe(_id, title){
+export function deleteShoe(_id, title, deleteShoeById){
 
     toast.promise(
         axios.delete(linkLocalHost+`delete/${_id}`),
@@ -13,4 +13,8 @@ export function deleteShoe(_id, title){
          },
          {position:'top-center', duration: 2000}
        )
+          .then(
+            () => deleteShoeById
+          )
+          .catch(err => console.log(err))
 }

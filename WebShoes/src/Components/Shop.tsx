@@ -23,19 +23,10 @@ type shoe = {
   title: string;
   desc: string;
   img: string;
-  price: number
+  price: number;
   _id: string;
 };
 
-function WindowButton(innerH) {
-  return innerH > 649 ? true : false;
-}
-
-function WindowScroll(scrolY) {
-  if (WindowButton(document.documentElement.scrollHeight))
-    return scrolY > 60 ? true : false;
-  return true;
-}
 
 //Using Firebase
 // export const ShopContext = () =>
@@ -44,16 +35,40 @@ function WindowScroll(scrolY) {
 //   </FirebaseContext.Consumer>
 
 export function Shop() {
-  const [shoesHendered, setShoesHendered] = useState([]);
+  const [shoesHendered, setShoesHendered] = useState<shoe[]>([]);
   const navigate = useNavigate();
 
-  useEffect(() => {
+  function requestAxios(){
     axios.get( linkLocalHost+"list")
-      .then((res) => {
-        setShoesHendered(res.data);
-      })
-      .catch((error) => console.log(error));
-  }, [shoesHendered]);
+    .then((res) => {
+      setShoesHendered(res.data);
+    })
+    .catch((error) => console.log(error));
+  }
+
+  function windowButton(innerH: Number) {
+    return innerH > 649 ? true : false;
+  }
+  
+  function windowScroll() {
+    if (windowButton(document.documentElement.scrollHeight))
+      return scrollY > 50 ? true : false;
+    return true;
+  } 
+
+  useEffect(() => {
+    requestAxios()
+  }, []);
+
+  function deleteShoeById(_id){
+    let newShoeHendered = shoesHendered
+
+    for (let i = 0; i < newShoeHendered.length; i++)
+      if(newShoeHendered[i]._id === _id)
+        newShoeHendered.splice(i, 1);
+        
+    setShoesHendered([...newShoeHendered]);
+  }
 
   return (
     <div className={styles.box}>
@@ -70,7 +85,7 @@ export function Shop() {
               <button className={styles.buttonEdit}>Editar</button>
               <button 
                 className={styles.buttonDelete}
-                onClick={() => deleteShoe(shoe._id, shoe.title)}
+                onClick={() => deleteShoe(shoe._id, shoe.title, deleteShoeById(shoe._id))}
                 >
                   <AiOutlineDelete size={20}/>
               </button>
@@ -80,7 +95,7 @@ export function Shop() {
       
         <button
           className={
-            WindowScroll(window.scrollY) ? styles.button : styles.buttonNone 
+            windowScroll() ? styles.button : styles.buttonNone 
           }
           onClick={() => navigate("/createShoe")}
         >

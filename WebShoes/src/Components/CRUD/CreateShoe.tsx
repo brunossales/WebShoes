@@ -24,7 +24,7 @@ export function CreateShoe(){
     
     const handleSubmit = (event) =>{
         event.preventDefault()
-
+        
         const newShoe = {title, desc, price, img}
 
         toast.promise(
