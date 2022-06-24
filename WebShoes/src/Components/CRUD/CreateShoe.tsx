@@ -62,7 +62,7 @@ export function CreateShoe(){
                     <input type="text"
                         name="price"
                         placeholder='Valor em $'
-                        value={(price == null || price == undefined) ? 0 : price}
+                        value={price || 0}
                         className={styleCreate.inputNumber}
                         onChange={(event) => {setPrice(parseFloat(event.target.value))}} 
                         />

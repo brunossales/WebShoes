@@ -107,11 +107,13 @@
 }
 
 .buttonNone{
-    visibility: hidden;
-    pointer-events: none;
-    display: none;
-    transition: all 700ms;
-    background: none;
+    // visibility: hidden;
+    // pointer-events: none;
+    // display: none;
+    // background: none;
+    position: fixed;
+    transform: translateY(150%);
+    transition: transform 1s;
 }
 
 .button:hover {

@@ -8,16 +8,15 @@ import axios from "axios";
 
 import { Shoes } from "./Shoes";
 
-import {AiOutlineDelete} from 'react-icons/ai'
+import { AiOutlineDelete } from "react-icons/ai";
 import { Toaster } from "react-hot-toast";
 import { linkLocalHost } from "./Url/Link";
 import { deleteShoe } from "./CRUD/DeleteShoe";
+import { windowScroll } from "./Controller/ControllerScroll";
 
 // import FirebaseShopServices from "../Services/FirebaseShopServices.js";
 // import FirebaseContext from "../Utils/FirebaseContext.js";
 // import { CreateShoe } from "./CRUD/CreateShoe";
-
-
 
 type shoe = {
   title: string;
@@ -27,7 +26,6 @@ type shoe = {
   _id: string;
 };
 
-
 //Using Firebase
 // export const ShopContext = () =>
 //   <FirebaseContext.Consumer>
@@ -35,45 +33,51 @@ type shoe = {
 //   </FirebaseContext.Consumer>
 
 export function Shop() {
-  const [shoesHendered, setShoesHendered] = useState<shoe[]>([]);
+  const [shoesRendered, setShoesRendered] = useState<shoe[]>([]);
+  const [showButton, setShowButton] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  function requestAxios(){
-    axios.get( linkLocalHost+"list")
-    .then((res) => {
-      setShoesHendered(res.data);
-    })
-    .catch((error) => console.log(error));
-  }
-
-  function windowButton(innerH: Number) {
-    return innerH > 649 ? true : false;
-  }
-  
-  function windowScroll() {
-    if (windowButton(document.documentElement.scrollHeight))
-      return scrollY > 50 ? true : false;
-    return true;
-  } 
-
   useEffect(() => {
-    requestAxios()
+    requestAxios();
+
+    const changeShowButton = () => setShowButton(windowScroll());
+    window.addEventListener("scroll", changeShowButton);
+    
+    return () => {
+      setShoesRendered([]);
+      window.removeEventListener("scroll", changeShowButton);
+    };
   }, []);
 
-  function deleteShoeById(_id){
-    let newShoeHendered = shoesHendered
+  function requestAxios() {
+    axios
+      .get(linkLocalHost + "list")
+      .then((res) => {
+        setShoesRendered(res.data);
+      })
+      .catch((error) => console.log(error));
+  }
 
-    for (let i = 0; i < newShoeHendered.length; i++)
-      if(newShoeHendered[i]._id === _id)
-        newShoeHendered.splice(i, 1);
-        
-    setShoesHendered([...newShoeHendered]);
+  function deleteShoeById(_id) {
+    let newShoeRendered = shoesRendered;
+
+    for (let i = 0; i < newShoeRendered.length; i++)
+      if (newShoeRendered[i]._id === _id) newShoeRendered.splice(i, 1);
+
+    setShoesRendered([...newShoeRendered]);
   }
 
   return (
     <div className={styles.box}>
+      <button
+        className={showButton ? styles.button : styles.buttonNone}
+        onClick={() => navigate("/createShoe")}
+      >
+        +
+      </button>
+
       <div className={styles.section}>
-        {shoesHendered.map((shoe: shoe, key) => (
+        {shoesRendered.map((shoe: shoe, key) => (
           <div className={styles.container} key={key}>
             <Shoes
               title={shoe.title}
@@ -83,27 +87,19 @@ export function Shop() {
             />
             <div className={styles.buttons}>
               <button className={styles.buttonEdit}>Editar</button>
-              <button 
+              <button
                 className={styles.buttonDelete}
-                onClick={() => deleteShoe(shoe._id, shoe.title, deleteShoeById(shoe._id))}
-                >
-                  <AiOutlineDelete size={20}/>
+                onClick={() =>
+                  deleteShoe(shoe._id, shoe.title, deleteShoeById(shoe._id))
+                }
+              >
+                <AiOutlineDelete size={20} />
               </button>
             </div>
           </div>
         ))}
-      
-        <button
-          className={
-            windowScroll() ? styles.button : styles.buttonNone 
-          }
-          onClick={() => navigate("/createShoe")}
-        >
-          +
-        </button>
-
       </div>
-      <Toaster  />
+      <Toaster />
     </div>
   );
 }
