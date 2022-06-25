@@ -1,1 +1,0 @@
-export const link = 'mongodb+srv://brunossaless:bruno9458@cluster0.tdouz.mongodb.net/?retryWrites=true&w=majority'
