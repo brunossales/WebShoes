@@ -1,0 +1,109 @@
+
+.container{
+    margin: 30px auto;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    max-width: 60%;
+    max-height: 60%;
+
+    h2{
+        font-family: sans-serif;
+        color: var(--tileColor);
+        font-size: 3rem;
+        svg{
+            height: 20%;
+            color: rgb(110, 103, 103);
+        }
+    }
+
+    form {
+        margin-top: 2%;
+        .input{
+            width: 400px;
+            margin: 7px 0;
+
+            height: 20px;
+
+            background-color: var(--backgroundColorTenis);
+
+            border: none;
+            border-bottom: solid 1px black;
+            padding: 3px;
+        }
+        .inputNumber{
+            width: 100px;
+            margin: 7px 0;
+
+            opacity: 0.7;
+
+            height: 20px;
+
+            background-color: var(--backgroundColorTenis);
+
+            border: none;
+            border-bottom: solid 1px black;
+            padding: 3px;
+        }
+
+        .input:focus{
+            background-color: white;
+            outline: none;
+            border: solid 2px var(--navTextColor);
+            border-radius: 3px;
+        }
+
+        .inputNumber:focus{
+            background-color: white;
+            outline: none;
+            border: solid 2px var(--navTextColor);
+            background-color: white;
+            outline: none;
+            border: solid 2px var(--navTextColor);
+            border-radius: 3px;
+        }
+
+        label{
+            font-weight: 700;
+            color: black;
+        }
+    }
+}
+
+.division{
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+
+}
+
+.button{
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    
+    input{
+        border-radius: 5px;
+        background-color: var(--buttonColorCrud);
+        color: white;
+        font-family: sans-serif;
+        outline: none;
+        border: none;
+        padding:13px;
+        transition: 700ms;
+    }
+    input:hover{
+        background-color: var(--buttonColorCrudHover);
+        cursor: pointer;
+        box-shadow: 1px 2px 8px 2px var(--buttonColorCrudHover);
+    }
+}
+

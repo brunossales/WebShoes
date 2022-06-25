@@ -23,4 +23,20 @@ router.delete(
     }
 )
 
+router.get(
+    '/retrieve/:id',
+    function (req, res, next) {
+        shoeService.retrieve(req, res)
+    }
+)
+
+router.put(
+    '/update/:id',
+    function (req, res, next) {
+        shoeService.update(req, res)
+    }
+)
+
+
+
 module.exports = router

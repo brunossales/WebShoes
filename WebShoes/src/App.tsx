@@ -6,6 +6,7 @@ import { About } from "./Components/About";
 import { Home } from "./Components/Home";
 import { Link, Route, Routes } from "react-router-dom";
 import { CreateShoe } from "./Components/CRUD/CreateShoe";
+import { EditShoe } from "./Components/CRUD/EditShoe";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="about" element={ <About /> } />
         <Route path="shop" element={ <Shop /> } />
         <Route path="createShoe" element={ <CreateShoe /> } />
+        <Route path="editeShoe/:id" element={ <EditShoe />} />
       </Routes>
     </div>
   );

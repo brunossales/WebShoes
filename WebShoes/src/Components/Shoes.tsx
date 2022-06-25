@@ -4,7 +4,7 @@ export function Shoes(props:{title: string, desc: string, img: string, price: nu
     return (
         <div className={styles.container}>
             <h3>{props.title}</h3>
-            <img src={props.img} alt="" />
+            <img src={props.img} alt="Imagem de tênis" title={props.img}/>
             <p>{props.desc}</p>
             <h4>R$ {props.price}</h4>
         </div>

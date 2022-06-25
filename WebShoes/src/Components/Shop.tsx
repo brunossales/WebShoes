@@ -34,7 +34,7 @@ type shoe = {
 
 export function Shop() {
   const [shoesRendered, setShoesRendered] = useState<shoe[]>([]);
-  const [showButton, setShowButton] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export function Shop() {
 
       <div className={styles.section}>
         {shoesRendered.map((shoe: shoe, key) => (
-          <div className={styles.container} key={key}>
+          <div className={styles.container} key={key} title={`Carde de N° ${key}`}>
             <Shoes
               title={shoe.title}
               desc={shoe.desc}
@@ -86,8 +86,14 @@ export function Shop() {
               price={shoe.price}
             />
             <div className={styles.buttons}>
-              <button className={styles.buttonEdit}>Editar</button>
               <button
+                title="Botão Editar" 
+                className={styles.buttonEdit}
+                onClick={() => navigate(`/editeShoe/${shoe._id}`)}>
+                  Editar
+              </button>
+              <button
+                title="Botão Deletar"
                 className={styles.buttonDelete}
                 onClick={() =>
                   deleteShoe(shoe._id, shoe.title, deleteShoeById(shoe._id))
