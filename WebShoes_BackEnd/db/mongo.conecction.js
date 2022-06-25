@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
-const {linked } = require('../Keys/ClusterLink');
+const {linke } = require('../Keys/ClusterLink');
 
 //connection local
-var mongoDB_URI = linked
+var mongoDB_URI = linke
 mongoose.connect(mongoDB_URI, {useNewUrlParser:true})
 
 var db = mongoose.connection
