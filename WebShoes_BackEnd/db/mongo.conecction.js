@@ -1,7 +1,8 @@
-var mongoose = require('mongoose')
+var mongoose = require('mongoose');
+const { link } = require('../Keys/ClusterLink');
 
 //connection local
-var mongoDB_URI = 'mongodb+srv://brunossaless:bruno9458@cluster0.tdouz.mongodb.net/?retryWrites=true&w=majority'
+var mongoDB_URI = link
 mongoose.connect(mongoDB_URI, {useNewUrlParser:true})
 
 var db = mongoose.connection
