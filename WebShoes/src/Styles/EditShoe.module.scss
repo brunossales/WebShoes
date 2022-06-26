@@ -1,5 +1,13 @@
+.division {
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
 
-.container{
+}
+
+.container {
     margin: 30px auto;
     padding-bottom: 30px;
     border-radius: 10px;
@@ -11,19 +19,26 @@
     max-width: 60%;
     max-height: 60%;
 
-    h2{
+    transition: 2s;
+
+    h2 {
         font-family: sans-serif;
         color: var(--tileColor);
-        font-size: 3rem;
-        svg{
+        font-size: 2.7rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
             height: 20%;
-            color: rgb(110, 103, 103);
+            color: var(--svgIcon);
         }
     }
 
     form {
         margin-top: 2%;
-        .input{
+
+        .input {
             width: 400px;
             margin: 7px 0;
 
@@ -35,7 +50,8 @@
             border-bottom: solid 1px black;
             padding: 3px;
         }
-        .inputNumber{
+
+        .inputNumber {
             width: 100px;
             margin: 7px 0;
 
@@ -50,14 +66,14 @@
             padding: 3px;
         }
 
-        .input:focus{
+        .input:focus {
             background-color: white;
             outline: none;
             border: solid 2px var(--navTextColor);
             border-radius: 3px;
         }
 
-        .inputNumber:focus{
+        .inputNumber:focus {
             background-color: white;
             outline: none;
             border: solid 2px var(--navTextColor);
@@ -67,43 +83,64 @@
             border-radius: 3px;
         }
 
-        label{
+        label {
             font-weight: 700;
             color: black;
         }
     }
 }
 
-.division{
-    margin-top: 20px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: column;
-
-}
-
-.button{
+.button {
     margin-top: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
-    input{
+
+
+    input {
         border-radius: 5px;
         background-color: var(--buttonColorCrud);
         color: white;
         font-family: sans-serif;
         outline: none;
         border: none;
-        padding:13px;
+        padding: 13px;
         transition: 700ms;
     }
-    input:hover{
+
+    input:hover {
         background-color: var(--buttonColorCrudHover);
         cursor: pointer;
         box-shadow: 1px 2px 8px 2px var(--buttonColorCrudHover);
     }
 }
 
+
+@media (max-width: 690px) {
+    .container {
+        max-width: 100%;
+        max-height: 100%;
+        transition: 2s;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        form {
+            label {
+                font-size: 90%;
+            }
+            .input{
+                width: 300px;
+            }
+        }
+    }
+
+    .button{
+        input{
+            
+            font-size: 0.7rem;
+        }
+    }
+
+}

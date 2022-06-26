@@ -1,3 +1,11 @@
+.division{
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+
+}
 
 .container{
     margin: 30px auto;
@@ -11,13 +19,17 @@
     max-width: 60%;
     max-height: 60%;
 
+    transition: 2s;
+
     h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-family: sans-serif;
         color: var(--tileColor);
-        font-size: 3rem;
+        font-size: 2.7rem;
         svg{
-            height: 20%;
-            color: rgb(110, 103, 103);
+            color: var(--svgIcon);
         }
     }
 
@@ -74,14 +86,6 @@
     }
 }
 
-.division{
-    margin-top: 20px;
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    flex-direction: column;
-
-}
 
 .button{
     margin-top: 5%;
@@ -107,3 +111,31 @@
     }
 }
 
+@media (max-width: 690px){
+   
+    .container {
+        max-width: 100%;
+        max-height: 100%;
+        transition: 2s;
+        h2 {
+            font-size: 2rem;
+        }
+
+        form {
+            label {
+                font-size: 90%;
+            }
+            .input{
+                width: 300px;
+            }
+        }
+    }
+
+    .button{
+        input{
+            
+            font-size: 0.7rem;
+        }
+    }
+
+}

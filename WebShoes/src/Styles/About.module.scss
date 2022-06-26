@@ -5,8 +5,9 @@
     align-items: center;
     background-color: var(--background-color);
 
-    section{
-        
+    section{ 
+        transition: all 2s;
+
         width: 100vw;
         height: 60vh;
         line-height: 4rem;
@@ -16,6 +17,8 @@
         color: var(--fontTextColorAbout);
     }
     h1{
+        transition: all 1s;
+
         font-family: serif;
         font-size: 2.5rem;
         
@@ -37,9 +40,10 @@
 @media (max-width: 600px){
     .about{
         section{
-            height: 90vh;
-            
+            transition: all 2s;
+            height: 80vh;
             h1{
+                transition: all 1s;
                 font-size: 1.5rem;
             }
         }
