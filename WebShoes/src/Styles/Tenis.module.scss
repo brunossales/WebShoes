@@ -63,6 +63,9 @@
     }
 
     .buttonDelete{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
         outline: none;
         cursor: pointer;
@@ -73,7 +76,8 @@
     }
 
     .buttonDelete:hover{
-        border-radius: 8px;
+        border-radius: 50%;
+        padding: 4px;
         box-shadow: 2px 2px 4px 1px red;
     }
 
@@ -86,6 +90,9 @@
 
 
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     visibility: visible;
     color: var(--tileColor);
     font-size: 2rem;

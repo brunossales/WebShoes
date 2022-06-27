@@ -7,7 +7,7 @@ export function About() {
         <h1 className={stylesAbout.aboutH1}>
           BEM-VINDO
           <br />
-          A PRINCIPAL LOJA TE TÊNIS
+          A PRINCIPAL LOJA DE TÊNIS
           <br />
           DO MUNDO
           <br />

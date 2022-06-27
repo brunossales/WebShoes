@@ -18,14 +18,14 @@
     }
     h1{
         transition: all 1s;
-
-        font-family: serif;
+        font-weight: bold;
         font-size: 2.5rem;
-        
+        font-family: 'Roboto', sans-serif;  
+
         span{
-            font-family: serif;
+            font-family: 'Roboto', sans-serif;
             color: var(--tileColor);
-            font-weight: 600;
+            font-weight: 400;
         }
     }
 
