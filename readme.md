@@ -1,4 +1,4 @@
-<div align="center">    
+<div align="center" justify="center">    
     <h1>WebShoes 👞</h1>
 </div>
 
