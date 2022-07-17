@@ -23,3 +23,10 @@
         </ul>  
     </ul>
 </div>
+<hr>
+<div align="center">
+    <h2>Veja como o projeto ficou...</h2>
+    <a href="https://github.com/brunossales/WebShoes/blob/main/WebShoes/src/img/WebShoes%20-%20Pessoal%20%E2%80%94%20README.gif">
+        <img src="https://github.com/brunossales/WebShoes/blob/main/WebShoes/src/img/WebShoes%20-%20Pessoal%20%E2%80%94%20README.gif">
+    </a>
+</div>
